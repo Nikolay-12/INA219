@@ -10,7 +10,7 @@ uint8_t INA219_ADDRESSES[4] ={0x40, 0x41, 0x44, 0x45};
 
 //PUBLIC
 
-namespace multiple_INA219
+namespace Multiple_INA219
 {
     //Globals
     ina219_module ina219_modules[NUMBER_OF_INA219];
