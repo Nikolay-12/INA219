@@ -13,14 +13,14 @@ uint8_t INA219_ADDRESSES[4] ={0x40, 0x41, 0x44, 0x45};
 namespace multiple_INA219
 {
     //Globals
-    ina219_module ina219_modules[] = 
-    {  
-        {
-            .cs = new user::pin_t(nCS_GPIO_Port, 1),
-            .addr = MY_DAC_0
-        }
-    };
+    ina219_module ina219_modules[NUMBER_OF_INA219];
 
+	for (size_t i = 0; i < NUMBER_OF_INA219; i++)
+	{
+		auto& m = ina219_modules[i];
+		m.addr = INA219_ADDRESSES[i];
+	}
+		
     //Public methods
     void init(I2C_HandleTypeDef* i2c_instance)
     {
