@@ -20,6 +20,6 @@ namespace multiple_INA219
 
     //Public methods
     void init(I2C_HandleTypeDef* hi2c);
-    void colibration();
+    void calibration();
     void read_current();
 }
