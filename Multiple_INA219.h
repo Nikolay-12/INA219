@@ -1,5 +1,5 @@
 /**
- * @file multiple_INA219.h
+ * @file Multiple_INA219.h
  * @author Malinin Nikolai
  */
 
