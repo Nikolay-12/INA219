@@ -1,4 +1,4 @@
-#include "multiple_INA219.h"
+#include "Multiple_INA219.h"
 #include "ina219.h"
 #include <math.h>
 
