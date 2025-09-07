@@ -10,6 +10,7 @@ namespace multiple_INA219
     struct ina219_module
     {
         I2C_HandleTypeDef* hi2c;
+        uint8_t addr;
         bool present;
         uint16_t current;
     };
