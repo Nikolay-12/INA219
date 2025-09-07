@@ -7,7 +7,7 @@
 
 namespace multiple_INA219
 {
-    struct module_t
+    struct ina219_module
     {
         I2C_HandleTypeDef* hi2c;
         bool present;
@@ -15,7 +15,7 @@ namespace multiple_INA219
     };
 
     //Globals
-    extern module_t modules[];
+    extern ina219_module ina219_modules[];
 
     //Public methods
     void init(I2C_HandleTypeDef* hi2c);
