@@ -49,7 +49,7 @@ int16_t INA219_ReadCurrent_raw(I2C_HandleTypeDef* hi2c, uint8_t addr)
 {
 	int16_t result = Read16(hi2c, addr, INA219_REG_CURRENT);
 
-	return (result );
+	return (result);
 }
 
 /*
