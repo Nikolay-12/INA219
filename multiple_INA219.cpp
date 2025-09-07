@@ -1,4 +1,4 @@
-#include "multiple_INA219.h"
+#include "multiple_INA219.cpp"
 #include "ina219.h"
 #include <math.h>
 
@@ -12,7 +12,7 @@
 namespace multiple_INA219
 {
     //Globals
-    module_t modules[] = 
+    ina219_module ina219_modules[] = 
     {  
         {
             .cs = new user::pin_t(nCS_GPIO_Port, 1),
@@ -26,7 +26,7 @@ namespace multiple_INA219
         if (!i2c_instance) Serial.println("Failed to find INA219_01 chip");
         for (size_t i = 0; i < NUMBER_OF_INA219; i++)
         {
-            auto& m = modules[i];
+            auto& m = ina219_modules[i];
             m.hi2c = i2c_instance;
         }
     }
@@ -39,7 +39,7 @@ namespace multiple_INA219
 	             INA219_CONFIG_MODE_SVOLT_CONTINUOUS;
         for (size_t i = 0; i < NUMBER_OF_INA219; i++)
         {
-            auto& m = modules[i];
+            auto& m = ina219_modules[i];
             if (!m.hi2c) continue;
             m.present = INA219_Init(m.hi2c, m.addr);
             if (!m.present) continue;
@@ -53,7 +53,7 @@ namespace multiple_INA219
     {
         for (size_t i = 0; i < NUMBER_OF_INA219; i++)
         {
-            auto& m = modules[i];
+            auto& m = ina219_modules[i];
             if (!m.present) continue;
             m.current = INA219_ReadCurrent(m.hi2c, m.addr);
         }
