@@ -6,6 +6,7 @@
 #define NUMBER_OF_INA219 = 3
 #define MY_INA219_CAL_MAGIC 33554.4 /* Divide by ohms */
 #define MY_INA219_CURRENT_LSB 1.2207E-6
+uint8_t INA219_ADDRESSES[4] ={0x40, 0x41, 0x44, 0x45};
 
 //PUBLIC
 
