@@ -5,7 +5,7 @@
 
 //PUBLIC
 
-namespace multiple_INA219
+namespace Multiple_INA219
 {
     struct ina219_module
     {
